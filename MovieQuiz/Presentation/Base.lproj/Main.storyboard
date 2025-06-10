@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="faU-p5-ei0">
-                                <rect key="frame" x="20" y="106" width="414" height="722"/>
+                                <rect key="frame" x="20" y="106" width="414" height="767.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yd7-Jq-zdD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="23.5"/>
@@ -46,12 +46,10 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TzO-wb-ozk" userLabel="Preview Image">
-                                        <rect key="frame" x="0.0" y="43.5" width="414" height="502"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="414" height="621"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="335" id="KsE-pX-4N2"/>
                                             <constraint firstAttribute="width" secondItem="TzO-wb-ozk" secondAttribute="height" multiplier="2:3" id="X1e-QM-iF9"/>
-                                            <constraint firstAttribute="height" constant="502" id="gpM-G0-ndT"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -60,16 +58,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e58-o6-qSZ" userLabel="Question Label">
-                                        <rect key="frame" x="0.0" y="565.5" width="414" height="76.5"/>
+                                        <rect key="frame" x="0.0" y="684.5" width="414" height="27"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tek-t4-HiN">
-                                        <rect key="frame" x="0.0" y="662" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="731.5" width="414" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgk-tg-hen" userLabel="No Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="36"/>
                                                 <color key="backgroundColor" name="YP White"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="BsA-YF-2V0"/>
@@ -86,7 +84,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XY-CB-2DJ" userLabel="Yes Button">
-                                                <rect key="frame" x="217" y="0.0" width="197" height="60"/>
+                                                <rect key="frame" x="217" y="0.0" width="197" height="36"/>
                                                 <color key="backgroundColor" name="YP White"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
