@@ -22,6 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-yD-NUE" userLabel="Question Title Label">
+                                <rect key="frame" x="20" y="106" width="72" height="24"/>
+                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
+                                <color key="textColor" name="YP White"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgk-tg-hen" userLabel="No Button">
                                 <rect key="frame" x="20" y="706" width="157" height="60"/>
                                 <color key="backgroundColor" name="YP White"/>
@@ -62,6 +68,8 @@
                             <constraint firstItem="3XY-CB-2DJ" firstAttribute="width" secondItem="wgk-tg-hen" secondAttribute="width" multiplier="1:1" id="Hlx-AS-ObN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3XY-CB-2DJ" secondAttribute="bottom" id="ID5-YU-Szl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wgk-tg-hen" secondAttribute="bottom" id="K6h-Fj-PkE"/>
+                            <constraint firstItem="Qra-yD-NUE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dci-3P-bwb"/>
+                            <constraint firstItem="Qra-yD-NUE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fRo-2m-6IB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3XY-CB-2DJ" secondAttribute="trailing" constant="20" id="kaU-uE-Dk5"/>
                             <constraint firstItem="3XY-CB-2DJ" firstAttribute="leading" secondItem="wgk-tg-hen" secondAttribute="trailing" constant="20" id="ytA-Wq-GaT"/>
                         </constraints>
