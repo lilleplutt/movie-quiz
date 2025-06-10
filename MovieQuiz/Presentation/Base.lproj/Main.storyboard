@@ -28,11 +28,11 @@
                                 <color key="textColor" name="YP White"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tek-t4-HiN">
-                                <rect key="frame" x="20" y="706" width="88" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tek-t4-HiN">
+                                <rect key="frame" x="20" y="768" width="374" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgk-tg-hen" userLabel="No Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="BsA-YF-2V0"/>
@@ -49,7 +49,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XY-CB-2DJ" userLabel="Yes Button">
-                                        <rect key="frame" x="54" y="0.0" width="34" height="60"/>
+                                        <rect key="frame" x="197" y="0.0" width="177" height="60"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -72,6 +72,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
+                            <constraint firstItem="Tek-t4-HiN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1Z4-mu-4Sg"/>
+                            <constraint firstItem="Tek-t4-HiN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bia-O1-XkE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tek-t4-HiN" secondAttribute="bottom" id="PYt-Ff-0WM"/>
                             <constraint firstItem="Qra-yD-NUE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dci-3P-bwb"/>
                             <constraint firstItem="Qra-yD-NUE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fRo-2m-6IB"/>
                         </constraints>
