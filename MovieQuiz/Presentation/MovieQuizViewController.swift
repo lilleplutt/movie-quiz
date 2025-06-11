@@ -1,10 +1,6 @@
 import UIKit
 
 final class MovieQuizViewController: UIViewController {
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     //MARK: - Properties
     
@@ -60,6 +56,12 @@ final class MovieQuizViewController: UIViewController {
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     
+    struct QuizStepViewModel {
+          let image: UIImage
+          let question: String
+          let questionNumber: String
+        }
+    
     //MARK: - Outlets
     
     @IBOutlet private weak var imageView: UIImageView!
@@ -74,6 +76,15 @@ final class MovieQuizViewController: UIViewController {
     @IBAction private func yesButtonClicked(_ sender: Any) {
     }
     
+    //MARK: - Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    private func convert(model: QuizQuestion) -> QuizStepViewModel {
+        return QuizStepViewModel(image: UIImage(named: model.image) ?? UIImage(), question: model.text, questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)")
+    }
 }
 
 /*
