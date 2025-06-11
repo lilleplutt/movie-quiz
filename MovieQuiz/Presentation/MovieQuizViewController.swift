@@ -100,9 +100,14 @@ final class MovieQuizViewController: UIViewController {
     }
     
     private func showAnswerResult(isCorrect: Bool) {
-       // метод красит рамку
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 8
+        if isCorrect {
+            imageView.layer.borderColor = UIColor.ypGreen.cgColor
+        } else {
+            imageView.layer.borderColor = UIColor.ypRed.cgColor
+        }
     }
-    
     
 }
 
