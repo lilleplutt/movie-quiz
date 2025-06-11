@@ -80,6 +80,7 @@ final class MovieQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        show(quiz: QuizStepViewModel(image: UIImage(), question: "", questionNumber: ""))
     }
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
@@ -91,7 +92,6 @@ final class MovieQuizViewController: UIViewController {
         counterLabel.text = step.questionNumber
         textLabel.text = step.question
     }
-    
     
     
     
