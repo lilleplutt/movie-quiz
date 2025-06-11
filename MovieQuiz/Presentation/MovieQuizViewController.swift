@@ -71,9 +71,15 @@ final class MovieQuizViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction private func noButtonClicked(_ sender: Any) {
+        let currentQuestion = questions[currentQuestionIndex]
+        let givenAnswer = true
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     @IBAction private func yesButtonClicked(_ sender: Any) {
+        let currentQuestion = questions[currentQuestionIndex]
+        let givenAnswer = true
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     //MARK: - Methods
@@ -93,6 +99,9 @@ final class MovieQuizViewController: UIViewController {
         textLabel.text = step.question
     }
     
+    private func showAnswerResult(isCorrect: Bool) {
+       // метод красит рамку
+    }
     
     
 }
