@@ -85,6 +85,16 @@ final class MovieQuizViewController: UIViewController {
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
         return QuizStepViewModel(image: UIImage(named: model.image) ?? UIImage(), question: model.text, questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)")
     }
+    
+    private func show(quiz step: QuizStepViewModel) {
+        imageView.image = step.image
+        counterLabel.text = step.questionNumber
+        textLabel.text = step.question
+    }
+    
+    
+    
+    
 }
 
 /*
