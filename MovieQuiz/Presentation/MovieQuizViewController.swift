@@ -5,15 +5,16 @@ final class MovieQuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
-
-struct QuizQuestion {
-    let image: String
-    let text: String
-    let correctAnswer: Bool
-}
-
-private let questions: [QuizQuestion] = [
+    
+    //MARK: Mock-данные
+    
+    struct QuizQuestion {
+        let image: String
+        let text: String
+        let correctAnswer: Bool
+    }
+    
+    private let questions: [QuizQuestion] = [
         QuizQuestion(
             image: "The Godfather",
             text: "Рейтинг этого фильма больше чем 6?",
@@ -55,7 +56,22 @@ private let questions: [QuizQuestion] = [
             text: "Рейтинг этого фильма больше чем 6?",
             correctAnswer: false)
     ]
-
+    
+    //MARK: Outlets
+    
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var textLabel: UILabel!
+    
+    //MARK: Actions
+    
+    @IBAction private func noButtonClicked(_ sender: Any) {
+    }
+    
+    @IBAction private func yesButtonClicked(_ sender: Any) {
+    }
+    
+}
 
 /*
  Mock-данные
