@@ -6,7 +6,7 @@ final class MovieQuizViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    //MARK: Mock-данные
+    //MARK: - Properties
     
     struct QuizQuestion {
         let image: String
@@ -57,13 +57,16 @@ final class MovieQuizViewController: UIViewController {
             correctAnswer: false)
     ]
     
-    //MARK: Outlets
+    private var currentQuestionIndex = 0
+    private var correctAnswers = 0
+    
+    //MARK: - Outlets
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var counterLabel: UILabel!
     @IBOutlet private weak var textLabel: UILabel!
     
-    //MARK: Actions
+    //MARK: - Actions
     
     @IBAction private func noButtonClicked(_ sender: Any) {
     }
