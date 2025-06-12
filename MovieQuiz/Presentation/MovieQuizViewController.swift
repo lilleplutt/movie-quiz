@@ -59,6 +59,12 @@ final class MovieQuizViewController: UIViewController {
           let questionNumber: String
         }
     
+    struct QuizResultsViewModel {
+      let title: String
+      let text: String
+      let buttonText: String
+    }
+    
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     
