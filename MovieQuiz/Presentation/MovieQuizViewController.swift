@@ -92,11 +92,17 @@ final class MovieQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        show(quiz: QuizStepViewModel(image: UIImage(named: "The Godfather") ?? UIImage(), question: "Рейтинг этого фильма больше чем 6?", questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)"))
+        show(quiz: QuizStepViewModel(
+            image: UIImage(named: "The Godfather") ?? UIImage(),
+            question: "Рейтинг этого фильма больше чем 6?",
+            questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)"))
     }
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
-        return QuizStepViewModel(image: UIImage(named: model.image) ?? UIImage(), question: model.text, questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)")
+        return QuizStepViewModel(
+            image: UIImage(named: model.image) ?? UIImage(),
+            question: model.text,
+            questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)")
     }
     
     private func show(quiz step: QuizStepViewModel) {
@@ -115,7 +121,6 @@ final class MovieQuizViewController: UIViewController {
             imageView.layer.borderColor = UIColor.ypRed.cgColor
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            // hides the border
             self.imageView.layer.borderWidth = 0
             self.showNextQuestionOrResults()
         }
