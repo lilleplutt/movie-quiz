@@ -94,7 +94,7 @@ final class MovieQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        show(quiz: QuizStepViewModel(image: UIImage(), question: "", questionNumber: ""))
+        show(quiz: QuizStepViewModel(image: UIImage(named: "The Godfather") ?? UIImage(), question: "Рейтинг этого фильма больше чем 6?", questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)"))
     }
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
@@ -144,6 +144,13 @@ final class MovieQuizViewController: UIViewController {
     alert.addAction(action)
 
     self.present(alert, animated: true, completion: nil)
+    
+    private func show(quiz result: QuizResultsViewModel) {
+        // попробуйте написать код создания и показа алерта с результатами
+        
+    }
+    
+    
     
 }
 
