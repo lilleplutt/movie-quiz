@@ -115,6 +115,8 @@ final class MovieQuizViewController: UIViewController {
             imageView.layer.borderColor = UIColor.ypRed.cgColor
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            // hides the border
+            self.imageView.layer.borderWidth = 0
             self.showNextQuestionOrResults()
         }
     }
@@ -147,8 +149,6 @@ final class MovieQuizViewController: UIViewController {
 
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
     
 }
 
