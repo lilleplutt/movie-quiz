@@ -54,15 +54,15 @@ final class MovieQuizViewController: UIViewController {
     ]
     
     struct QuizStepViewModel {
-          let image: UIImage
-          let question: String
-          let questionNumber: String
-        }
+        let image: UIImage
+        let question: String
+        let questionNumber: String
+    }
     
     struct QuizResultsViewModel {
-      let title: String
-      let text: String
-      let buttonText: String
+        let title: String
+        let text: String
+        let buttonText: String
     }
     
     private var currentQuestionIndex = 0
@@ -120,15 +120,16 @@ final class MovieQuizViewController: UIViewController {
     }
         
     private func showNextQuestionOrResults() {
-            if currentQuestionIndex == questions.count - 1 {
+        if currentQuestionIndex == questions.count - 1 {
                 // идём в состояние "Результат квиза"
-            } else {
-                currentQuestionIndex += 1
-                let nextQuestion = questions[currentQuestionIndex]
-                let viewModel = convert(model: nextQuestion)
-                show(quiz: viewModel)
-            }
+            show(quiz: QuizResultsViewModel(correctAnswers: correctAnswers, totalQuestions: questions.count))
+        } else {
+            currentQuestionIndex += 1
+            let nextQuestion = questions[currentQuestionIndex]
+            let viewModel = convert(model: nextQuestion)
+            show(quiz: viewModel)
         }
+    }
     
     private func show(quiz result: QuizResultsViewModel) {
         let alert = UIAlertController(title: result.title, message: result.text, preferredStyle: .alert)
