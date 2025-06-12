@@ -62,6 +62,8 @@ final class MovieQuizViewController: UIViewController {
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     
+    let alert = UIAlertController( title: "Этот раунд окончен!", message: "Ваш результат ???", preferredStyle: .alert)
+    
     //MARK: - Outlets
     
     @IBOutlet private weak var imageView: UIImageView!
@@ -104,6 +106,7 @@ final class MovieQuizViewController: UIViewController {
         imageView.layer.borderWidth = 8
         if isCorrect {
             imageView.layer.borderColor = UIColor.ypGreen.cgColor
+            correctAnswers += 1
         } else {
             imageView.layer.borderColor = UIColor.ypRed.cgColor
         }
@@ -123,6 +126,18 @@ final class MovieQuizViewController: UIViewController {
             }
         }
     
+    let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
+        self.currentQuestionIndex = 0
+        self.correctAnswers = 0
+        
+        let firstQuestion = self.questions[self.currentQuestionIndex]
+        let viewModel = self.convert(model: firstQuestion)
+        self.show(quiz: viewModel)
+    }
+
+    alert.addAction(action)
+
+    self.present(alert, animated: true, completion: nil)
     
 }
 
