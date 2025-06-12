@@ -53,14 +53,14 @@ final class MovieQuizViewController: UIViewController {
             correctAnswer: false)
     ]
     
-    private var currentQuestionIndex = 0
-    private var correctAnswers = 0
-    
     struct QuizStepViewModel {
           let image: UIImage
           let question: String
           let questionNumber: String
         }
+    
+    private var currentQuestionIndex = 0
+    private var correctAnswers = 0
     
     //MARK: - Outlets
     
@@ -107,8 +107,21 @@ final class MovieQuizViewController: UIViewController {
         } else {
             imageView.layer.borderColor = UIColor.ypRed.cgColor
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.showNextQuestionOrResults()
+        }
     }
-    
+        
+        private func showNextQuestionOrResults() {
+            if currentQuestionIndex == questions.count - 1 {
+                // идём в состояние "Результат квиза"
+            } else {
+                currentQuestionIndex += 1
+                let nextQuestion = questions[currentQuestionIndex]
+                let viewModel = convert(model: nextQuestion)
+                show(quiz: viewModel)
+            }
+        }
     
     
 }
