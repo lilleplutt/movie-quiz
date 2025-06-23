@@ -3,7 +3,9 @@ import UIKit
 final class MovieQuizViewController: UIViewController {
     
     //MARK: - Properties
-    
+    private let questionsAmount: Int = 10
+    private var questionFactory: QuestionFactory = QuestionFactory()
+    private var currentQuestion: QuizQuestion?
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     
@@ -31,10 +33,11 @@ final class MovieQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        show(quiz: QuizStepViewModel(
-            image: UIImage(named: "The Godfather") ?? UIImage(),
-            question: "Рейтинг этого фильма больше чем 6?",
-            questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)"))
+        if let firstQuestion = questionFactory.requestNextQuestion() {
+            currentQuestion = firstQuestion
+            let viewModel = convert(model: firstQuestion)
+            show(quiz: viewModel)
+        }
     }
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
