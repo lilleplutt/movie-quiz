@@ -4,10 +4,6 @@
 
 import Foundation
 
-protocol QuestionFactoryProtocol {
-    func requestNextQuestion() -> QuizQuestion?
-}
-
 class QuestionFactory: QuestionFactoryProtocol {
     private let questions: [QuizQuestion] = [
         QuizQuestion(
