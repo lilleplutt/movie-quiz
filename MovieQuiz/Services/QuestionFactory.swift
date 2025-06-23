@@ -1,7 +1,6 @@
 //
 //  QuestionFactory.swift
 //  MovieQuiz
-//
 
 import Foundation
 
