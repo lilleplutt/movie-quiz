@@ -29,7 +29,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
-    //MARK: - Methods
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,18 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
             show(quiz: viewModel)
         }
     }
+    
+    //MARK: - QuestionFactoryDelegate
+    
+    func didRequestNextQuestion(question: QuizQuestion?) {
+        guard let question = question else { return }
+        
+            currentQuestion = question
+            let viewModel = convert(model: question)
+            show(quiz: viewModel)
+    }
+    
+    //MARK: - Private functions
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
         return QuizStepViewModel(
