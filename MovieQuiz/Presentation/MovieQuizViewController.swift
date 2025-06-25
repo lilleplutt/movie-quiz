@@ -1,6 +1,6 @@
 import UIKit
 
-final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
+final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertPresenterProtocol {
     
     //MARK: - Properties
     private let questionsAmount: Int = 10
@@ -49,6 +49,12 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         DispatchQueue.main.async { [weak self] in
             self?.show(quiz: viewModel)
         }
+    }
+    
+    //MARK: - AlertPresenterProtocol
+    
+    func presentAlert(alert: UIAlertController, animated: Bool) {
+        
     }
     
     //MARK: - Private functions
