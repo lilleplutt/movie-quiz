@@ -2,5 +2,5 @@ import Foundation
 import UIKit
 
 protocol AlertPresenterProtocol: AnyObject {
-    func presentAlert(alert: UIAlertController, animated: Bool)
+    func present(alert: UIAlertController, animated: Bool)
 }
