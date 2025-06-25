@@ -101,7 +101,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
         }
     }
 
-    
     private func show(quiz result: QuizResultsViewModel) {
         let alertModel = AlertModel(
             title: result.title,
@@ -115,7 +114,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
             self.questionFactory?.requestNextQuestion()
         }
     )
-        
         alertPresenter.show(alert: alertModel)
     }
     
