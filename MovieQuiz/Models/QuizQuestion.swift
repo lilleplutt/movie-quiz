@@ -1,7 +1,3 @@
-//
-//  QuizQuestion.swift
-//  MovieQuiz
-
 import Foundation
 
 struct QuizQuestion {

@@ -1,7 +1,3 @@
-//
-//  QuizResultsViewModel.swift
-//  MovieQuiz
-
 import Foundation
 
 struct QuizResultsViewModel {

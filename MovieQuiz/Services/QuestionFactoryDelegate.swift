@@ -1,7 +1,3 @@
-//
-//  QuestionFactoryDelegate.swift
-//  MovieQuiz
-
 import Foundation
 
 protocol QuestionFactoryDelegate: AnyObject {
