@@ -6,6 +6,7 @@ final class StatisticService: StatisticServiceProtocol {
         if storage.object(forKey: Keys.totalCorrect.rawValue) == nil {
             storage.set(0, forKey: Keys.totalCorrect.rawValue)
             storage.set(0, forKey: Keys.totalQuestions.rawValue)
+            storage.set(0, forKey: Keys.gamesCount.rawValue)
         }
     }
     
@@ -52,7 +53,7 @@ final class StatisticService: StatisticServiceProtocol {
             let totalQuestions = storage.integer(forKey: Keys.totalQuestions.rawValue)
             guard totalQuestions > 0 else { return 0 }
             
-            return Double(correctAnswers) / Double(totalQuestions) * 100
+            return Double(totalCorrect) / Double(totalQuestions) * 100
         }
     }
     
