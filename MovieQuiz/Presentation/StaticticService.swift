@@ -9,6 +9,10 @@ final class StaticticService: StatisticServiceProtocol {
         case correct
         case bestGame
         case gamesCount
+        case total
+        case date
+        case totalCorrect
+        case totalQuestions
     }
     
     var gamesCount: Int {
@@ -22,16 +26,16 @@ final class StaticticService: StatisticServiceProtocol {
     
     var bestGame: GameResult {
         get {
-            let correct = storage.integer(forKey: "bestGameCorrect")
-            let total = storage.integer(forKey: "bestGameTotal")
-            let date = storage.object(forKey: "bestGameDate") as? Date ?? Date()
+            let correct = storage.integer(forKey: Keys.correct.rawValue)
+            let total = storage.integer(forKey: Keys.total.rawValue)
+            let date = storage.object(forKey: Keys.date.rawValue) as? Date ?? Date()
             
             return GameResult(correct: correct, total: total, date: date)
         }
         set {
-            storage.set(newValue.correct, forKey: "bestGameCorrect")
-            storage.set(newValue.total, forKey: "bestGameTotal")
-            storage.set(newValue.date, forKey: "bestGameDate")
+            storage.set(newValue.correct, forKey: Keys.correct.rawValue)
+            storage.set(newValue.total, forKey: Keys.total.rawValue)
+            storage.set(newValue.date, forKey: Keys.date.rawValue)
         }
     }
     
