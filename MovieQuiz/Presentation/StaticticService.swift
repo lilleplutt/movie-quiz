@@ -1,6 +1,6 @@
 import Foundation
 
-final class StaticticService: StatisticServiceProtocol {
+final class StatisticService: StatisticServiceProtocol {
     
     private var correctAnswers: Int = 0
     private let storage: UserDefaults = .standard
