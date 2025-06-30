@@ -41,7 +41,8 @@ final class StaticticService: StatisticServiceProtocol {
     
     var totalAccuracy: Double {
         get {
-            let totalQuestions = storage.integer(forKey: "totalQuestions")
+            let totalCorrect = storage.integer(forKey: Keys.totalCorrect.rawValue)
+            let totalQuestions = storage.integer(forKey: Keys.totalQuestions.rawValue)
             guard totalQuestions > 0 else { return 0 }
             
             return Double(correctAnswers) / Double(totalQuestions) * 100
