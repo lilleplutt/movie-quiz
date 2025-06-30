@@ -1,14 +1,22 @@
 import Foundation
 
 final class StaticticService: StatisticServiceProtocol {
+    
+    private var correctAnswers: Int = 0
     private let storage: UserDefaults = .standard
+    
+    private enum Keys: String {
+        case correct
+        case bestGame
+        case gamesCount
+    }
     
     var gamesCount: Int {
         get {
-            storage.integer(forKey: "gamesCount")
+            storage.integer(forKey: Keys.gamesCount.rawValue)
         }
         set {
-            storage.set(newValue, forKey: "gamesCount")
+            storage.set(newValue, forKey: Keys.gamesCount.rawValue)
         }
     }
     var bestGame: GameResult {
@@ -25,8 +33,6 @@ final class StaticticService: StatisticServiceProtocol {
             storage.set(newValue.date, forKey: "bestGameDate")
         }
     }
-    
-    private var correctAnswers: Int = 0
     
     var totalAccuracy: Double {
         get {
