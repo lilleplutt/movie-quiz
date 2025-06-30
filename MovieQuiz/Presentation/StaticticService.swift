@@ -23,12 +23,15 @@ final class StaticticService: StatisticServiceProtocol {
             UserDefaults.standard.set(newValue.date, forKey: "bestGameDate")
         }
     }
+    
+    private var correctAnswers: Int = 0
+    
     var totalAccuracy: Double {
         get {
+            let totalQuestions = UserDefaults.standard.integer(forKey: "totalQuestions")
+            guard totalQuestions > 0 else { return 0 }
             
-        }
-        set {
-            
+            return Double(correctAnswers) / Double(totalQuestions) * 100
         }
     }
     
