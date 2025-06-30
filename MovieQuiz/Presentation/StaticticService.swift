@@ -2,6 +2,13 @@ import Foundation
 
 final class StatisticService: StatisticServiceProtocol {
     
+    init() {
+        if storage.object(forKey: Keys.totalCorrect.rawValue) == nil {
+            storage.set(0, forKey: Keys.totalCorrect.rawValue)
+            storage.set(0, forKey: Keys.totalQuestions.rawValue)
+        }
+    }
+    
     private var correctAnswers: Int = 0
     private let storage: UserDefaults = .standard
     

@@ -105,6 +105,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     private func show(quiz result: QuizResultsViewModel) {
         statisticService.store(correct: correctAnswers, total: questionsAmount)
         
+        let currentResult = "Ваш результат: \(correctAnswers)/\(questionsAmount)\n"
         let bestGame = statisticService.bestGame
         let bestGameInfo = "Рекорд: \(bestGame.correct)/\(bestGame.total)(\(bestGame.date.dateTimeString))\n"
         let totalAccuracy = "Средняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%\n"
@@ -112,7 +113,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
         
         let alertModel = AlertModel(
             title: result.title,
-            message: bestGameInfo + totalAccuracy + gamesCount,
+            message: currentResult + bestGameInfo + totalAccuracy + gamesCount,
             buttonText: result.buttonText,
             completion: { [weak self] in
             guard let self = self else { return }
