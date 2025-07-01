@@ -1,6 +1,6 @@
 import UIKit
 
-final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertPresenterProtocol {
+class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertPresenterProtocol {
     
     //MARK: - Properties
     private let questionsAmount: Int = 10

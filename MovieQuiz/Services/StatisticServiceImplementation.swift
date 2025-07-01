@@ -1,17 +1,6 @@
 import Foundation
 
-final class StatisticService: StatisticServiceProtocol {
-    
-    init() {
-        if storage.object(forKey: Keys.totalCorrect.rawValue) == nil {
-            storage.set(0, forKey: Keys.totalCorrect.rawValue)
-            storage.set(0, forKey: Keys.totalQuestions.rawValue)
-            storage.set(0, forKey: Keys.gamesCount.rawValue)
-        }
-    }
-    
-    private var correctAnswers: Int = 0
-    private let storage: UserDefaults = .standard
+final class StatisticServiceImplementation: StatisticService, StatisticServiceProtocol {
     
     private enum Keys: String {
         case correct
@@ -22,6 +11,17 @@ final class StatisticService: StatisticServiceProtocol {
         case totalCorrect
         case totalQuestions
     }
+    
+    override init() {
+        if storage.object(forKey: Keys.totalCorrect.rawValue) == nil {
+            storage.set(0, forKey: Keys.totalCorrect.rawValue)
+            storage.set(0, forKey: Keys.totalQuestions.rawValue)
+            storage.set(0, forKey: Keys.gamesCount.rawValue)
+        }
+    }
+    
+    private var correctAnswers: Int = 0
+    private let storage: UserDefaults = .standard
     
     var gamesCount: Int {
         get {
@@ -71,6 +71,5 @@ final class StatisticService: StatisticServiceProtocol {
             bestGame = currentGame
         }
     }
-    
 }
 
