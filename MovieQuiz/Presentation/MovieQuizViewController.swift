@@ -4,7 +4,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     
     //MARK: - Properties
     private let questionsAmount: Int = 10
-    private let statisticService: StatisticServiceProtocol = StatisticService()
+    private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
     private var currentQuestionIndex = 0
