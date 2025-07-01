@@ -10,9 +10,17 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     private lazy var alertPresenter = AlertPresenter(view: self)
+    private var isButtonEnabled: Bool = true {
+        didSet {
+            yesButton.isEnabled = isButtonEnabled
+            noButton.isEnabled = isButtonEnabled
+        }
+    }
     
     //MARK: - Outlets
     
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var counterLabel: UILabel!
     @IBOutlet private weak var textLabel: UILabel!
