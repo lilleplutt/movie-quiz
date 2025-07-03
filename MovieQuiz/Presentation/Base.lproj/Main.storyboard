@@ -32,13 +32,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="6.666666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-yD-NUE" userLabel="Question Title Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="312.66666666666669" height="6.666666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="317" height="6.666666666666667"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="textColor" name="YP White"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4j-l1-y8M" userLabel="Index Lable">
-                                                <rect key="frame" x="312.66666666666669" y="0.0" width="40.333333333333314" height="6.666666666666667"/>
+                                                <rect key="frame" x="317" y="0.0" width="36" height="6.666666666666667"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="textColor" name="YP White"/>
                                                 <nil key="highlightedColor"/>
@@ -120,7 +120,9 @@
                     <connections>
                         <outlet property="counterLabel" destination="X4j-l1-y8M" id="7g1-3Q-bc4"/>
                         <outlet property="imageView" destination="TzO-wb-ozk" id="OEa-XT-Qnm"/>
+                        <outlet property="noButton" destination="wgk-tg-hen" id="CCd-Z3-reQ"/>
                         <outlet property="textLabel" destination="e58-o6-qSZ" id="rw9-dl-3Ud"/>
+                        <outlet property="yesButton" destination="3XY-CB-2DJ" id="OKA-du-KqF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
