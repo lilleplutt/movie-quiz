@@ -24,6 +24,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var counterLabel: UILabel!
     @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Actions
     
