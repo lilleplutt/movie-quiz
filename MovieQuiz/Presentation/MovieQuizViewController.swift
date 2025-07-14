@@ -70,6 +70,11 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     
     //MARK: - Private functions
     
+    private func showLoadingIndicator() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating() 
+    }
+    
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
         return QuizStepViewModel(
             image: UIImage(named: model.image) ?? UIImage(),
