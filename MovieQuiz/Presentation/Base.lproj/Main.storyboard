@@ -107,6 +107,9 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dUG-h9-vVL">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
@@ -114,7 +117,9 @@
                             <constraint firstItem="faU-p5-ei0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="IFu-OA-Sd0"/>
                             <constraint firstItem="faU-p5-ei0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NuL-wy-b11"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="faU-p5-ei0" secondAttribute="trailing" constant="20" id="b98-kt-hQR"/>
+                            <constraint firstItem="dUG-h9-vVL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bDa-JH-ijf"/>
                             <constraint firstItem="faU-p5-ei0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cDu-bx-Jbe"/>
+                            <constraint firstItem="dUG-h9-vVL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nt0-At-W7j"/>
                         </constraints>
                     </view>
                     <connections>
