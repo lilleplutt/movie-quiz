@@ -85,6 +85,11 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         activityIndicator.startAnimating()
     }
     
+    private func hideLoadingIndicator() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+    
     private func showNetworkError(message: String) {
         hideLoadingIndicator()
         
