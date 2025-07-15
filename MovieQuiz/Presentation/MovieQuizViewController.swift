@@ -10,12 +10,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private var currentQuestionIndex = 0
     private var correctAnswers = 0
     private lazy var alertPresenter = AlertPresenter(view: self)
-    private var isButtonEnabled: Bool = true {
-        didSet {
-            yesButton.isEnabled = isButtonEnabled
-            noButton.isEnabled = isButtonEnabled
-        }
-    }
     
     //MARK: - Outlets
     
@@ -29,13 +23,15 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     //MARK: - Actions
     
     @IBAction private func noButtonClicked(_ sender: Any) {
-        guard isButtonEnabled, let currentQuestion = currentQuestion else { return }
+        guard let currentQuestion = currentQuestion else { return }
+        setButtonsEnabled(false)
         let givenAnswer = false
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     @IBAction private func yesButtonClicked(_ sender: Any) {
-        guard isButtonEnabled, let currentQuestion = currentQuestion else { return }
+        guard let currentQuestion = currentQuestion else { return }
+        setButtonsEnabled(false)
         let givenAnswer = true
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
@@ -170,6 +166,11 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         }
     )
         alertPresenter.show(alert: alertModel)
+    }
+    
+    private func setButtonsEnabled(_ enabled: Bool) {
+        yesButton.isEnabled = enabled
+        noButton.isEnabled = enabled
     }
     
 }
