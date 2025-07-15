@@ -117,22 +117,18 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     }
     
     private func showAnswerResult(isCorrect: Bool) {
-            // Подсветка ответа
-            imageView.layer.borderWidth = 8
-            imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
-            if isCorrect { correctAnswers += 1 }
-            
-            // Важно: принудительно разблокируем кнопки перед задержкой
-            setButtonsEnabled(false)
-            
-            // Через 1 сек убираем подсветку и идём дальше
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-                guard let self = self else { return }
-                self.imageView.layer.borderWidth = 0
-                self.setButtonsEnabled(true) // ← Разблокируем здесь!
-                self.showNextQuestionOrResults()
-            }
+        imageView.layer.borderWidth = 8
+        imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
+        if isCorrect { correctAnswers += 1 }
+        setButtonsEnabled(false)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            guard let self = self else { return }
+            self.imageView.layer.borderWidth = 0
+            self.setButtonsEnabled(true)
+            self.showNextQuestionOrResults()
         }
+    }
     
     private func showNextQuestionOrResults() {
         if currentQuestionIndex == questionsAmount - 1 {
@@ -173,7 +169,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private func setButtonsEnabled(_ enabled: Bool) {
         yesButton.isEnabled = enabled
         noButton.isEnabled = enabled
-        print("кнопки \(enabled ? "доступны" : "недоступны")")
     }
     
 }
