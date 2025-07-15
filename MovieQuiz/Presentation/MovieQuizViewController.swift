@@ -62,6 +62,15 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         }
     }
     
+    func didLoadDataFromServer() {
+        activityIndicator.isHidden = true
+        questionFactory?.requestNextQuestion()
+    }
+
+    func didFailToLoadData(with error: Error) {
+        showNetworkError(message: error.localizedDescription)
+    }
+    
     //MARK: - AlertPresenterProtocol
     
     func present(alert: UIAlertController, animated: Bool) {
