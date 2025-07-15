@@ -100,7 +100,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
             self.questionFactory?.requestNextQuestion()
         }
         
-        alertPresenter.show(in: self, model: model)
+        alertPresenter.show(alert: model)
     }
     
     private func convert(model: QuizQuestion) -> QuizStepViewModel {
