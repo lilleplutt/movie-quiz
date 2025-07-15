@@ -2,8 +2,11 @@ import Foundation
 
 class QuestionFactory: QuestionFactoryProtocol {
     
-    weak var delegate: QuestionFactoryDelegate?
+    private let moviesLoader: MoviesLoading
+    private weak var delegate: QuestionFactoryDelegate?
+    private var movies: [MostPopularMovie] = []
     
+    /*
     private let questions: [QuizQuestion] = [
         QuizQuestion(
             image: "The Godfather",
@@ -46,9 +49,15 @@ class QuestionFactory: QuestionFactoryProtocol {
             text: "Рейтинг этого фильма больше чем 6?",
             correctAnswer: false)
     ]
+     */
     
-    init(delegate: QuestionFactoryDelegate) {
+    init(moviesLoader: MoviesLoading, delegate: QuestionFactoryDelegate) {
         self.delegate = delegate
+        self.moviesLoader = moviesLoader
+    }
+    
+    func loadData() {
+        
     }
     
     func requestNextQuestion() {
