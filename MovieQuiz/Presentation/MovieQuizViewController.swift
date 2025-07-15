@@ -89,8 +89,8 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private func showNetworkError(message: String) {
         hideLoadingIndicator()
         
-        let model = AlertModel(title: "Ошибка",
-                               message: message,
+        let model = AlertModel(title: "Что-то пошло не так(",
+                               message: "Невозможно загрузить данные",
                                buttonText: "Попробовать еще раз") { [weak self] in
             guard let self = self else { return }
             
