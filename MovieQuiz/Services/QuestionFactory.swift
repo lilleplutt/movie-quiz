@@ -58,16 +58,18 @@ class QuestionFactory: QuestionFactoryProtocol {
     
     func loadData() {
         moviesLoader.loadMovies { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let mostPopularMovies):
-                self.movies = mostPopularMovies.items 
-                self.delegate?.didLoadDataFromServer()
-            case .failure(let error):
-                self.delegate?.didFailToLoadData(with: error)
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success(let mostPopularMovies):
+                    self.movies = mostPopularMovies.items
+                    self.delegate?.didLoadDataFromServer()
+                case .failure(let error):
+                    self.delegate?.didFailToLoadData(with: error)
                 }
             }
         }
+    }
     
     func requestNextQuestion() {
         DispatchQueue.global().async { [weak self] in
