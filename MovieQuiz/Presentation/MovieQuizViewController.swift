@@ -117,20 +117,22 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     }
     
     private func showAnswerResult(isCorrect: Bool) {
-        imageView.layer.masksToBounds = true
-        imageView.layer.borderWidth = 8
-        if isCorrect {
-            imageView.layer.borderColor = UIColor.ypGreen.cgColor
-            correctAnswers += 1
-        } else {
-            imageView.layer.borderColor = UIColor.ypRed.cgColor
+            // Подсветка ответа
+            imageView.layer.borderWidth = 8
+            imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
+            if isCorrect { correctAnswers += 1 }
+            
+            // Важно: принудительно разблокируем кнопки перед задержкой
+            setButtonsEnabled(false)
+            
+            // Через 1 сек убираем подсветку и идём дальше
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                guard let self = self else { return }
+                self.imageView.layer.borderWidth = 0
+                self.setButtonsEnabled(true) // ← Разблокируем здесь!
+                self.showNextQuestionOrResults()
+            }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            guard let self = self else { return }
-            self.imageView.layer.borderWidth = 0
-            self.showNextQuestionOrResults()
-        }
-    }
     
     private func showNextQuestionOrResults() {
         if currentQuestionIndex == questionsAmount - 1 {

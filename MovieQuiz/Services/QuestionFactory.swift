@@ -79,15 +79,11 @@ class QuestionFactory: QuestionFactoryProtocol {
             guard let movie = self.movies[safe: index] else { return }
             
             var imageData = Data()
-            URLSession.shared.dataTask(with: movie.resizedImageURL) { data, _,
-                error in
-                if let error = error {
-                    print("Ошибка загрузки изображения: \(error.localizedDescription)")
-                    imageData = Data()
-                } else {
-                    imageData = data ?? Data()
-                }
-                
+           
+           do {
+                imageData = try Data(contentsOf: movie.resizedImageURL)
+            } catch {
+                print("Failed to load image")
             }
             
             let rating = Float(movie.rating) ?? 0
