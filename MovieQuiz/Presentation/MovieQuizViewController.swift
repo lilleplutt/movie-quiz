@@ -173,6 +173,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private func setButtonsEnabled(_ enabled: Bool) {
         yesButton.isEnabled = enabled
         noButton.isEnabled = enabled
+        print("кнопки \(enabled ? "доступны" : "недоступны")")
     }
     
 }
