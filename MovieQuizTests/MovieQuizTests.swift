@@ -1,9 +1,25 @@
-import Testing
+import XCTest
 
-struct MovieQuizTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+class MovieQuizTests: XCTestCase {
+    
+    override func setUpWithError() throws {
+        
     }
-
+        
+    override func tearDownWithError() throws {
+        
+    }
+    
+    func testExample() throws {
+        
+    }
+    
+    func testPerformanceExample() throws {
+        measure {
+            
+        }
+    }
+        
 }
+
+
