@@ -1,6 +1,10 @@
 import Foundation
 
-/// Отвечает за загрузку данных по URL
+protocol NetworkRouting {
+    func fetch(url: URL, handler: @escaping (Result<Data, Error>) -> Void)
+}
+
+// Отвечает за загрузку данных по URL
 struct NetworkClient {
 
     private enum NetworkError: Error {
