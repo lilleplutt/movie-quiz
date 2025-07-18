@@ -1,3 +1,4 @@
+import Foundation
 import XCTest
 
 final class MovieQuizUITests: XCTestCase {
@@ -27,5 +28,13 @@ final class MovieQuizUITests: XCTestCase {
         app.launch()
     }
     
+    func yesTestButton() {
+        let firstPoster = app.images["Poster"]
+        app.buttons["Yes"].tap()
+        
+        let secondPoster = app.images["Poster"]
+        
+        XCTAssertFalse(firstPoster == secondPoster)
+    }
 
 }
