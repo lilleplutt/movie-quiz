@@ -36,9 +36,10 @@ final class MovieQuizUITests: XCTestCase {
         sleep(3)
         let secondPoster = app.images["Poster"]
         
-        XCTAssertFalse(firstPoster == secondPoster)
-        XCTAssertTrue(firstPoster.exists)
-        XCTAssertTrue(secondPoster.exists)
+        let firstPosterData = firstPoster.screenshot().pngRepresentation
+        let secondPosterData = secondPoster.screenshot().pngRepresentation
+        
+        XCTAssertNotEqual(firstPosterData, secondPosterData)
     }
 
 }
