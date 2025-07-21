@@ -133,7 +133,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private func showNextQuestionOrResults() {
         if currentQuestionIndex == questionsAmount - 1 {
             show(quiz: QuizResultsViewModel(
-                title: "Раунд окончен!",
+                title: "Этот раунд окончен!",
                 text: "Ваш результат: \(correctAnswers)/\(questionsAmount)",
                 buttonText: "Сыграть еще раз"))
         } else {
@@ -172,6 +172,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     }
     
 }
+
 
 
 
