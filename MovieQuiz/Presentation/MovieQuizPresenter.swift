@@ -29,13 +29,13 @@ final class MovieQuizPresenter {
     }
     
     //MARK: - Actions
-    @IBAction func yesButtonClicked(_ sender: Any) {
+    func yesButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
         let givenAnswer = true
         viewController?.showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
-    @IBAction func noButtonClicked(_ sender: Any) {
+    func noButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
         let givenAnswer = false
         viewController?.showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
