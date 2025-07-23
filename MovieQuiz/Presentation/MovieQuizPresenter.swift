@@ -4,7 +4,7 @@ final class MovieQuizPresenter {
     private let questionsAmount: Int = 10
     private var currentQuestionIndex: Int = 0
     
-    private func convert(model: QuizQuestion) -> QuizStepViewModel {
+    func convert(model: QuizQuestion) -> QuizStepViewModel {
         return QuizStepViewModel(
             image: UIImage(data: model.image) ?? UIImage(),
             question: model.text,
