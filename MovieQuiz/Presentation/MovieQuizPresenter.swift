@@ -57,10 +57,11 @@ final class MovieQuizPresenter {
     
     func showNextQuestionOrResults() {
         if self.isLastQuestion() {
-            show(quiz: QuizResultsViewModel(
+            let viewModel = QuizResultsViewModel(
                 title: "Этот раунд окончен!",
                 text: "Ваш результат: \(correctAnswers)/\(questionsAmount)",
-                buttonText: "Сыграть еще раз"))
+                buttonText: "Сыграть еще раз")
+            viewController?.show(quiz: viewModel)
         } else {
             self.switchToNextQuestion()
             questionFactory?.requestNextQuestion()
