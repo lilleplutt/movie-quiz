@@ -27,6 +27,11 @@ final class MovieQuizPresenter {
             questionNumber: "\(currentQuestionIndex + 1)/\(questionsAmount)")
     }
     
+    private func setButtonsEnabled(_ enabled: Bool) {
+        yesButton.isEnabled = enabled
+        noButton.isEnabled = enabled
+    }
+    
     //MARK: - Actions
     @IBAction private func yesButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
