@@ -6,7 +6,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private let presenter = MovieQuizPresenter()
     private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     private var questionFactory: QuestionFactoryProtocol?
-    private var currentQuestion: QuizQuestion?
     private var correctAnswers = 0
     private lazy var alertPresenter = AlertPresenter(view: self)
     
