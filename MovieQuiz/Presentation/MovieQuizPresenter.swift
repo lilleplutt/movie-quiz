@@ -5,7 +5,8 @@ final class MovieQuizPresenter {
     //MARK: - Properties
     let questionsAmount: Int = 10
     var currentQuestionIndex: Int = 0
-    private var currentQuestion: QuizQuestion?
+    var currentQuestion: QuizQuestion?
+    weak var viewController: MovieQuizViewController?
     
     //MARK: - Functions
     func isLastQuestion() -> Bool {
