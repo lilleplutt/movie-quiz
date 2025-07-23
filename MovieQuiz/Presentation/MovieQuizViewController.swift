@@ -108,7 +108,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         textLabel.text = step.question
     }
     
-    private func showAnswerResult(isCorrect: Bool) {
+    func showAnswerResult(isCorrect: Bool) {
         imageView.layer.borderWidth = 8
         imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
         if isCorrect { correctAnswers += 1 }
