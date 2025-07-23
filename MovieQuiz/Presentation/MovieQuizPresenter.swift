@@ -55,7 +55,7 @@ final class MovieQuizPresenter {
         }
     }
     
-    private func showNextQuestionOrResults() {
+    func showNextQuestionOrResults() {
         if self.isLastQuestion() {
             show(quiz: QuizResultsViewModel(
                 title: "Этот раунд окончен!",
