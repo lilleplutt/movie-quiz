@@ -8,6 +8,7 @@ final class MovieQuizPresenter {
     var currentQuestion: QuizQuestion?
     weak var viewController: MovieQuizViewController?
     var correctAnswers: Int = 0
+    var questionFactory: QuestionFactoryProtocol?
     
     //MARK: - Functions
     func isLastQuestion() -> Bool {
