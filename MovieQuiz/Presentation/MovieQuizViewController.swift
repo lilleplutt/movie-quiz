@@ -27,10 +27,9 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     }
     
     @IBAction private func noButtonClicked(_ sender: Any) {
-        guard let currentQuestion = currentQuestion else { return }
         setButtonsEnabled(false)
-        let givenAnswer = false
-        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        presenter.currentQuestion = currentQuestion
+        presenter.noButtonClicked((Any).self)
     }
     
     //MARK: - Lifecycle
