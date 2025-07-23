@@ -61,7 +61,7 @@ final class MovieQuizPresenter {
                 title: "Этот раунд окончен!",
                 text: "Ваш результат: \(correctAnswers)/\(questionsAmount)",
                 buttonText: "Сыграть еще раз")
-            viewController?.show(quiz: viewModel)
+            viewController?.show(result: viewModel)
         } else {
             self.switchToNextQuestion()
             questionFactory?.requestNextQuestion()

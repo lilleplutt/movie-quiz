@@ -99,7 +99,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
             presenter.didReceiveNextQuestion(question: question)
         }
 
-    private func show(quiz result: QuizResultsViewModel) {
+    func show(result: QuizResultsViewModel) {
         statisticService.store(correct: correctAnswers, total: presenter.questionsAmount)
         
         let currentResult = "Ваш результат: \(correctAnswers)/\(presenter.questionsAmount)\n"
