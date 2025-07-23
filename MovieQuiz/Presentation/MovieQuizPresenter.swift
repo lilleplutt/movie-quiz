@@ -28,22 +28,15 @@ final class MovieQuizPresenter {
             questionNumber: "\(currentQuestionIndex + 1)/\(questionsAmount)")
     }
     
-    private func setButtonsEnabled(_ enabled: Bool) {
-        yesButton.isEnabled = enabled
-        noButton.isEnabled = enabled
-    }
-    
     //MARK: - Actions
     @IBAction func yesButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
-        setButtonsEnabled(false)
         let givenAnswer = true
         viewController?.showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     @IBAction func noButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
-        setButtonsEnabled(false)
         let givenAnswer = false
         viewController?.showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }

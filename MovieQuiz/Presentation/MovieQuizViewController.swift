@@ -11,7 +11,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     private lazy var alertPresenter = AlertPresenter(view: self)
     
     //MARK: - Outlets
-    
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
@@ -21,13 +20,11 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     
     //MARK: - Actions
     @IBAction private func yesButtonClicked(_ sender: Any) {
-        setButtonsEnabled(false)
         presenter.currentQuestion = currentQuestion
         presenter.yesButtonClicked((Any).self)
     }
     
     @IBAction private func noButtonClicked(_ sender: Any) {
-        setButtonsEnabled(false)
         presenter.currentQuestion = currentQuestion
         presenter.noButtonClicked((Any).self)
     }
@@ -111,12 +108,10 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         imageView.layer.borderWidth = 8
         imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
         if isCorrect { correctAnswers += 1 }
-        setButtonsEnabled(false)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             guard let self = self else { return }
             self.imageView.layer.borderWidth = 0
-            self.setButtonsEnabled(true)
             self.showNextQuestionOrResults()
         }
     }
@@ -155,11 +150,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         }
     )
         alertPresenter.show(alert: alertModel)
-    }
-    
-    private func setButtonsEnabled(_ enabled: Bool) {
-        yesButton.isEnabled = enabled
-        noButton.isEnabled = enabled
     }
     
 }
