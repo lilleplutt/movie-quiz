@@ -34,7 +34,7 @@ final class MovieQuizPresenter {
     }
     
     //MARK: - Actions
-    @IBAction private func yesButtonClicked(_ sender: Any) {
+    @IBAction func yesButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
         setButtonsEnabled(false)
         let givenAnswer = true

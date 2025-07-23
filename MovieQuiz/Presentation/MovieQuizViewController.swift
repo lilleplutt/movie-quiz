@@ -20,6 +20,11 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Actions
+    @IBAction private func yesButtonClicked(_ sender: Any) {
+        setButtonsEnabled(false)
+        presenter.currentQuestion = currentQuestion
+        presenter.yesButtonClicked((Any).self)
+    }
     
     @IBAction private func noButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else { return }
