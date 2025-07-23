@@ -96,18 +96,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     func didReceiveNextQuestion(question: QuizQuestion?) {
             presenter.didReceiveNextQuestion(question: question)
         }
-    
-    private func showNextQuestionOrResults() {
-        if presenter.isLastQuestion() {
-            show(quiz: QuizResultsViewModel(
-                title: "Этот раунд окончен!",
-                text: "Ваш результат: \(correctAnswers)/\(presenter.questionsAmount)",
-                buttonText: "Сыграть еще раз"))
-        } else {
-            presenter.switchToNextQuestion()
-            questionFactory?.requestNextQuestion()
-        }
-    }
 
     private func show(quiz result: QuizResultsViewModel) {
         statisticService.store(correct: correctAnswers, total: presenter.questionsAmount)
