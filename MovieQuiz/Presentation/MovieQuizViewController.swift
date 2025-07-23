@@ -40,6 +40,8 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter.viewController = self
+        
         questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         showLoadingIndicator()
         questionFactory?.loadData()
