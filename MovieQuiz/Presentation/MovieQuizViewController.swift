@@ -3,6 +3,7 @@ import UIKit
 class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertPresenterProtocol {
     
     //MARK: - Properties
+    private let presenter = MovieQuizPresenter()
     private let questionsAmount: Int = 10
     private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     private var questionFactory: QuestionFactoryProtocol?
