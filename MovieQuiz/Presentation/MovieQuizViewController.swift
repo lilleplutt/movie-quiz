@@ -93,6 +93,10 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         }
     }
     
+    func didReceiveNextQuestion(question: QuizQuestion?) {
+            presenter.didReceiveNextQuestion(question: question)
+        }
+    
     private func showNextQuestionOrResults() {
         if presenter.isLastQuestion() {
             show(quiz: QuizResultsViewModel(
