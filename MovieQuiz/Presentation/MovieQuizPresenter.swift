@@ -38,7 +38,7 @@ final class MovieQuizPresenter {
         guard let currentQuestion = currentQuestion else { return }
         setButtonsEnabled(false)
         let givenAnswer = true
-        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        viewController?.showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
 }
