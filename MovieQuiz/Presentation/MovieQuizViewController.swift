@@ -4,11 +4,9 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     
     //MARK: - Properties
     private let presenter = MovieQuizPresenter()
-    private let questionsAmount: Int = 10
     private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
-    private var currentQuestionIndex = 0
     private var correctAnswers = 0
     private lazy var alertPresenter = AlertPresenter(view: self)
     
