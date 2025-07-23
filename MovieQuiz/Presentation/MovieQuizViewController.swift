@@ -28,13 +28,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
-    @IBAction private func yesButtonClicked(_ sender: Any) {
-        guard let currentQuestion = currentQuestion else { return }
-        setButtonsEnabled(false)
-        let givenAnswer = true
-        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
-    }
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
