@@ -93,7 +93,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
                                buttonText: "Попробовать еще раз") { [weak self] in
             guard let self = self else { return }
             
-            self.currentQuestionIndex = 0
+            self.presenter.currentQuestionIndex = 0
             self.correctAnswers = 0
             
             self.questionFactory?.requestNextQuestion()
