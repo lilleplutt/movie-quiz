@@ -18,17 +18,6 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     @IBOutlet private weak var textLabel: UILabel!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
-    //MARK: - Actions
-    @IBAction private func yesButtonClicked(_ sender: Any) {
-        presenter.currentQuestion = currentQuestion
-        presenter.yesButtonClicked((Any).self)
-    }
-    
-    @IBAction private func noButtonClicked(_ sender: Any) {
-        presenter.currentQuestion = currentQuestion
-        presenter.noButtonClicked((Any).self)
-    }
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -150,6 +139,17 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         }
     )
         alertPresenter.show(alert: alertModel)
+    }
+    
+    //MARK: - Actions
+    @IBAction private func yesButtonClicked(_ sender: Any) {
+        presenter.currentQuestion = currentQuestion
+        presenter.yesButtonClicked((Any).self)
+    }
+    
+    @IBAction private func noButtonClicked(_ sender: Any) {
+        presenter.currentQuestion = currentQuestion
+        presenter.noButtonClicked((Any).self)
     }
     
 }
