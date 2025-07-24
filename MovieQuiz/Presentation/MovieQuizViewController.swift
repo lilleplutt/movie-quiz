@@ -63,11 +63,14 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         let model = AlertModel(title: "Что-то пошло не так(",
                                message: "Невозможно загрузить данные",
                                buttonText: "Попробовать еще раз") { [weak self] in
-        guard let self = self else { return }
+            guard let self = self else { return }
+            
             self.presenter.currentQuestionIndex = 0
             self.presenter.restartGame()
+            
             self.questionFactory?.requestNextQuestion()
         }
+        
         alertPresenter.show(alert: model)
     }
     
