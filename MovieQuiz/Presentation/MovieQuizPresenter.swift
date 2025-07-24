@@ -68,18 +68,17 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     }
     
     func yesButtonClicked(_ sender: Any) {
-       didAnswer(isYes: true)
+       didAnswer(isCorrectAnswer: true)
     }
     
     func noButtonClicked(_ sender: Any) {
-       didAnswer(isYes: false)
+       didAnswer(isCorrectAnswer: false)
     }
     
-    func didAnswer(isYes: Bool) {
-        guard let currentQuestion = currentQuestion else { return }
-        let givenAnswer = isYes
-        
-        proceedWithAnswer(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+    func didAnswer(isCorrectAnswer: Bool) {
+        if isCorrectAnswer {
+            correctAnswers += 1
+        }
     }
     
     func didReceiveNextQuestion(question: QuizQuestion?) {
@@ -120,7 +119,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     }
     
     func proceedWithAnswer(isCorrect: Bool) {
-        didAnswer(isYes: isCorrect)
+        didAnswer(isCorrectAnswer: isCorrect)
 
         viewController?.highlightImageBorder(isCorrectAnswer: isCorrect)
 
