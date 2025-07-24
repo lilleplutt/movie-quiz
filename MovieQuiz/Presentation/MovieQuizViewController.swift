@@ -33,14 +33,14 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
         self.present(alert, animated: animated)
     }
     
-    //MARK: - Private functions
+    //MARK: - Functions
     
-    private func showLoadingIndicator() {
+    func showLoadingIndicator() {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     
-    private func hideLoadingIndicator() {
+    func hideLoadingIndicator() {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }

@@ -14,6 +14,10 @@ final class MovieQuizPresenter {
     
     init(viewController: MovieQuizViewController) {
         self.viewController = viewController
+        
+        questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
+        questionFactory?.loadData()
+        viewController.showLoadingIndicator()
     }
     
     func isLastQuestion() -> Bool {
