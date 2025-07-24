@@ -26,7 +26,7 @@ final class MovieQuizPresenter {
     
     func restartGame() {
         currentQuestionIndex = 0
-        questionFactory?.requestNextQuestion()
+        correctAnswers = 0
         questionFactory?.requestNextQuestion()
     }
     
