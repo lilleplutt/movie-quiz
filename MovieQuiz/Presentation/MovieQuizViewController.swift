@@ -27,17 +27,6 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
         questionFactory?.loadData()
     }
     
-    //MARK: - QuestionFactoryDelegate
-    
-    func didLoadDataFromServer() {
-        activityIndicator.isHidden = true
-        questionFactory?.requestNextQuestion()
-    }
-
-    func didFailToLoadData(with error: Error) {
-        showNetworkError(message: error.localizedDescription)
-    }
-    
     //MARK: - AlertPresenterProtocol
     
     func present(alert: UIAlertController, animated: Bool) {
@@ -92,10 +81,6 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
             self.presenter.showNextQuestionOrResults()
         }
     }
-    
-    func didReceiveNextQuestion(question: QuizQuestion?) {
-            presenter.didReceiveNextQuestion(question: question)
-        }
 
     func show(result: QuizResultsViewModel) {
     statisticService.store(correct: presenter.correctAnswers, total: presenter.questionsAmount)
