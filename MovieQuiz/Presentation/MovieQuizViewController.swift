@@ -61,19 +61,6 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
         counterLabel.text = step.questionNumber
         textLabel.text = step.question
     }
-    
-    func showAnswerResult(isCorrect: Bool) {
-        presenter.didAnswer(isYes: isCorrect)
-
-        imageView.layer.masksToBounds = true
-        imageView.layer.borderWidth = 8
-        imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            guard let self = self else { return }
-            self.presenter.showNextQuestionOrResults()
-        }
-    }
 
     func show(result: QuizResultsViewModel) {
         let message = presenter.makeResultsMessage()
@@ -92,6 +79,12 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func highlightImageBorder(isCorrectAnswer: Bool) {
+            imageView.layer.masksToBounds = true
+            imageView.layer.borderWidth = 8
+            imageView.layer.borderColor = isCorrectAnswer ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
+        }
     
     //MARK: - Actions
     @IBAction private func yesButtonClicked(_ sender: Any) {

@@ -119,5 +119,16 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         return resultMessage
     }
     
+    func showAnswerResult(isCorrect: Bool) {
+        didAnswer(isYes: isCorrect)
+
+        viewController?.highlightImageBorder(isCorrectAnswer: isCorrect)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            guard let self = self else { return }
+            self.showNextQuestionOrResults()
+        }
+    }
+    
 }
 
