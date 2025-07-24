@@ -1,11 +1,10 @@
 import UIKit
 
-class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertPresenterProtocol {
+class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
     
     //MARK: - Properties
-    private let presenter = MovieQuizPresenter()
+    private var presenter = MovieQuizPresenter!
     private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
-    private var questionFactory: QuestionFactoryProtocol?
     private lazy var alertPresenter = AlertPresenter(view: self)
     
     //MARK: - Outlets
@@ -21,7 +20,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.viewController = self
+        presenter = MovieQuizPresenter(viewController: self)
         
         questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         showLoadingIndicator()
