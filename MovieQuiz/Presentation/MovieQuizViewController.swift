@@ -99,9 +99,9 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
         }
 
     func show(result: QuizResultsViewModel) {
-        statisticService.store(correct: correctAnswers, total: presenter.questionsAmount)
+    statisticService.store(correct: presenter.correctAnswers, total: presenter.questionsAmount)
         
-        let currentResult = "Ваш результат: \(correctAnswers)/\(presenter.questionsAmount)\n"
+        let currentResult = "Ваш результат: \(presenter.correctAnswers)/\(presenter.questionsAmount)\n"
         let bestGame = statisticService.bestGame
         let bestGameInfo = "Рекорд: \(bestGame.correct)/\(bestGame.total)(\(bestGame.date.dateTimeString))\n"
         let totalAccuracy = "Средняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%\n"
@@ -115,7 +115,7 @@ class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertP
             guard let self = self else { return }
             
             self.presenter.currentQuestionIndex = 0
-            self.correctAnswers = 0
+            self.presenter.restartGame()
             self.questionFactory?.requestNextQuestion()
         }
     )
