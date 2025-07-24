@@ -18,6 +18,7 @@ final class MovieQuizPresenter {
     func restartGame() {
         currentQuestionIndex = 0
         questionFactory?.requestNextQuestion()
+        questionFactory?.requestNextQuestion()
     }
     
     func switchToNextQuestion() {
