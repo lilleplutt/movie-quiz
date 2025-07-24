@@ -21,10 +21,7 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
         super.viewDidLoad()
         
         presenter = MovieQuizPresenter(viewController: self)
-        
-        questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         showLoadingIndicator()
-        questionFactory?.loadData()
     }
     
     //MARK: - AlertPresenterProtocol

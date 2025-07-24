@@ -1,6 +1,6 @@
 import UIKit
 
-final class MovieQuizPresenter {
+final class MovieQuizPresenter: QuestionFactoryDelegate {
     
     //MARK: - Properties
     let questionsAmount: Int = 10
