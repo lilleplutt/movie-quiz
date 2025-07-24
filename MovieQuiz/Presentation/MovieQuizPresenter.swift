@@ -7,10 +7,10 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     let questionsAmount: Int = 10
     var currentQuestionIndex: Int = 0
     var currentQuestion: QuizQuestion?
-    weak var viewController: MovieQuizViewController?
+    private weak var viewController: MovieQuizViewController?
     var correctAnswers: Int = 0
     private var questionFactory: QuestionFactoryProtocol?
-    private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
+    private var statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     
     //MARK: - QuestionFactoryDelegate
     
@@ -38,6 +38,8 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     
     init(viewController: MovieQuizViewController) {
         self.viewController = viewController
+        
+        statisticService = StatisticServiceImplementation()
         
         questionFactory = QuestionFactory(moviesLoader: MoviesLoader(), delegate: self)
         questionFactory?.loadData()
