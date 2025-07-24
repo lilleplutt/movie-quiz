@@ -76,20 +76,21 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
     }
 
     func show(result: QuizResultsViewModel) {
+        let message = presenter.makeResultsMessage()
         
-        
-        let alertModel = AlertModel(
+        let alert = UIAlertController(
             title: result.title,
-            message: currentResult + bestGameInfo + totalAccuracy + gamesCount,
-            buttonText: result.buttonText,
-            completion: { [weak self] in
+            message: message,
+            preferredStyle: .alert)
+            
+        let action = UIAlertAction(title: result.buttonText, style: .default) { [weak self] _ in
             guard let self = self else { return }
             
-            self.presenter.currentQuestionIndex = 0
             self.presenter.restartGame()
         }
-    )
-        alertPresenter.show(alert: alertModel)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - Actions
