@@ -20,7 +20,6 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
         super.viewDidLoad()
         
         presenter = MovieQuizPresenter(viewController: self)
-        showLoadingIndicator()
     }
     
     //MARK: - AlertPresenterProtocol
