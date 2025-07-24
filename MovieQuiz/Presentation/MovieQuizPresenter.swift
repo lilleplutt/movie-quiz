@@ -3,12 +3,14 @@ import UIKit
 final class MovieQuizPresenter: QuestionFactoryDelegate {
     
     //MARK: - Properties
+    
     let questionsAmount: Int = 10
     var currentQuestionIndex: Int = 0
     var currentQuestion: QuizQuestion?
     weak var viewController: MovieQuizViewController?
     var correctAnswers: Int = 0
-    var questionFactory: QuestionFactoryProtocol?
+    private var questionFactory: QuestionFactoryProtocol?
+    private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     
     //MARK: - QuestionFactoryDelegate
     
