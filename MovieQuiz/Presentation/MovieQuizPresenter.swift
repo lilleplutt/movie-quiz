@@ -79,7 +79,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         guard let currentQuestion = currentQuestion else { return }
         let givenAnswer = isYes
         
-        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        proceedWithAnswer(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     func didReceiveNextQuestion(question: QuizQuestion?) {
@@ -119,7 +119,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         return resultMessage
     }
     
-    func showAnswerResult(isCorrect: Bool) {
+    func proceedWithAnswer(isCorrect: Bool) {
         didAnswer(isYes: isCorrect)
 
         viewController?.highlightImageBorder(isCorrectAnswer: isCorrect)
