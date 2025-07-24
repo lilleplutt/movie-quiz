@@ -77,13 +77,7 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
     }
 
     func show(result: QuizResultsViewModel) {
-    statisticService.store(correct: presenter.correctAnswers, total: presenter.questionsAmount)
         
-        let currentResult = "Ваш результат: \(presenter.correctAnswers)/\(presenter.questionsAmount)\n"
-        let bestGame = statisticService.bestGame
-        let bestGameInfo = "Рекорд: \(bestGame.correct)/\(bestGame.total)(\(bestGame.date.dateTimeString))\n"
-        let totalAccuracy = "Средняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%\n"
-        let gamesCount = "Количество сыгранных квизов: \(statisticService.gamesCount)"
         
         let alertModel = AlertModel(
             title: result.title,
