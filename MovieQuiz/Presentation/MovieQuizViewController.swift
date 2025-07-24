@@ -3,7 +3,7 @@ import UIKit
 class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
     
     //MARK: - Properties
-    private var presenter = MovieQuizPresenter!
+    private var presenter = MovieQuizPresenter()
     private let statisticService: StatisticServiceProtocol = StatisticServiceImplementation()
     private lazy var alertPresenter = AlertPresenter(view: self)
     
