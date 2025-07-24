@@ -57,6 +57,7 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
     }
     
     func show(quiz step: QuizStepViewModel) {
+        imageView.layer.borderColor = UIColor.clear.cgColor
         imageView.image = step.image
         counterLabel.text = step.questionNumber
         textLabel.text = step.question
