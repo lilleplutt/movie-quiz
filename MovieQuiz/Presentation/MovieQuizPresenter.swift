@@ -67,6 +67,14 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
             questionNumber: "\(currentQuestionIndex + 1)/\(questionsAmount)")
     }
     
+    private func didAnswer(isYes: Bool) {
+        guard let currentQuestion = currentQuestion else { return }
+
+            let givenAnswer = isYes
+
+            proceedWithAnswer(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        }
+    
     func yesButtonClicked(_ sender: Any) {
        didAnswer(isCorrectAnswer: true)
     }
