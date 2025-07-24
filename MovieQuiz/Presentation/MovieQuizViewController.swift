@@ -100,7 +100,6 @@ class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
             
             self.presenter.currentQuestionIndex = 0
             self.presenter.restartGame()
-            self.questionFactory?.requestNextQuestion()
         }
     )
         alertPresenter.show(alert: alertModel)
