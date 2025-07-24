@@ -11,6 +11,11 @@ final class MovieQuizPresenter {
     var questionFactory: QuestionFactoryProtocol?
     
     //MARK: - Functions
+    
+    init(viewController: MovieQuizViewController) {
+        self.viewController = viewController
+    }
+    
     func isLastQuestion() -> Bool {
         currentQuestionIndex == questionsAmount - 1
     }
