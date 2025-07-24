@@ -3,12 +3,12 @@ import UIKit
 class MovieQuizViewController: UIViewController, AlertPresenterProtocol {
     
     //MARK: - Properties
-    private var presenter = MovieQuizPresenter()
+    private var presenter: MovieQuizPresenter!
     private lazy var alertPresenter = AlertPresenter(view: self)
     
     //MARK: - Outlets
-    @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet private weak var yesButton: UIButton!
+    @IBOutlet private weak var noButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var counterLabel: UILabel!
     @IBOutlet private weak var textLabel: UILabel!
