@@ -70,17 +70,17 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     private func didAnswer(isYes: Bool) {
         guard let currentQuestion = currentQuestion else { return }
 
-            let givenAnswer = isYes
+        let givenAnswer = isYes
 
-            proceedWithAnswer(isCorrect: givenAnswer == currentQuestion.correctAnswer)
-        }
+        proceedWithAnswer(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+    }
     
     func yesButtonClicked(_ sender: Any) {
-       didAnswer(isCorrectAnswer: true)
+      didAnswer(isYes: true)
     }
     
     func noButtonClicked(_ sender: Any) {
-       didAnswer(isCorrectAnswer: false)
+       didAnswer(isYes: false)
     }
     
     func didAnswer(isCorrectAnswer: Bool) {
