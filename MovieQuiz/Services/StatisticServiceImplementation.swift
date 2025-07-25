@@ -1,6 +1,6 @@
 import Foundation
 
-final class StatisticServiceImplementation: StatisticService, StatisticServiceProtocol {
+final class StatisticServiceImplementation: StatisticServiceProtocol {
     
     private enum Keys: String {
         case correct
@@ -12,7 +12,7 @@ final class StatisticServiceImplementation: StatisticService, StatisticServicePr
         case totalQuestions
     }
     
-    override init() {
+    init() {
         if storage.object(forKey: Keys.totalCorrect.rawValue) == nil {
             storage.set(0, forKey: Keys.totalCorrect.rawValue)
             storage.set(0, forKey: Keys.totalQuestions.rawValue)
