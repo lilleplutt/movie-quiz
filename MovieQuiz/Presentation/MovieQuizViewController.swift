@@ -1,6 +1,6 @@
 import UIKit
 
-final class MovieQuizViewController: UIViewController, MovieQuizViewControllerProtocol AlertPresenterProtocol {
+final class MovieQuizViewController: UIViewController, MovieQuizViewControllerProtocol, AlertPresenterProtocol {
     
     //MARK: - Properties
     private var presenter: MovieQuizPresenter!
