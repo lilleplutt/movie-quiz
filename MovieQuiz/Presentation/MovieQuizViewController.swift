@@ -79,6 +79,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         alert.addAction(action)
         
         self.present(alert, animated: true, completion: nil)
+        imageView.layer.borderColor = UIColor.clear.cgColor
     }
     
     func highlightImageBorder(isCorrectAnswer: Bool) {
