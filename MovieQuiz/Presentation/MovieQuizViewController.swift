@@ -2,17 +2,19 @@ import UIKit
 
 final class MovieQuizViewController: UIViewController, MovieQuizViewControllerProtocol, AlertPresenterProtocol {
     
-    //MARK: - Properties
-    private var presenter: MovieQuizPresenter!
-    private lazy var alertPresenter = AlertPresenter(view: self)
+    //MARK: - IBOutlets
     
-    //MARK: - Outlets
     @IBOutlet private weak var yesButton: UIButton!
     @IBOutlet private weak var noButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var counterLabel: UILabel!
     @IBOutlet private weak var textLabel: UILabel!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    
+    //MARK: - Private properties
+    
+    private var presenter: MovieQuizPresenter!
+    private lazy var alertPresenter = AlertPresenter(view: self)
     
     //MARK: - Lifecycle
     
@@ -28,7 +30,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         self.present(alert, animated: animated)
     }
     
-    //MARK: - Functions
+    //MARK: - Public methods
     
     func showLoadingIndicator() {
         activityIndicator.isHidden = false
@@ -86,6 +88,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         }
     
     //MARK: - Actions
+    
     @IBAction private func yesButtonClicked(_ sender: Any) {
         presenter.yesButtonClicked((Any).self)
     }
